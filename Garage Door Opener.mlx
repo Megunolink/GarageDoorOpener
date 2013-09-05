@@ -7,7 +7,7 @@
         <send-cr-default>true</send-cr-default>
         <send-lf-default>true</send-lf-default>
         <word-wrap-default>true</word-wrap-default>
-        <include-date>false</include-date>
+        <include-date>true</include-date>
         <include-time>false</include-time>
         <clear-on-send>false</clear-on-send>
         <message-history />
@@ -17,12 +17,12 @@
         <uploads>
           <upload>
             <display-name>Garage door operner</display-name>
-            <path>M:\Projects\BLS\Arduino\Garage Door Opener\Garage Door Opener\bin\Debug\Garage Door Opener.hex</path>
+            <path>M:\Projects\BLS\Arduino\GarageDoorOpener\Garage Door Opener\bin\Debug\Garage Door Opener.hex</path>
             <relative-path>false</relative-path>
             <device-template-id>Uno</device-template-id>
             <programmer-id>serial</programmer-id>
             <port-name>COM37</port-name>
-            <last-upload>2013-09-01T20:22:55.2638227+12:00</last-upload>
+            <last-upload>2013-09-05T22:31:15.3375581+12:00</last-upload>
             <auto-program>true</auto-program>
             <verify>false</verify>
           </upload>
@@ -36,7 +36,7 @@
       <source type="SharedRS232Port">
         <id>0</id>
         <is-programmer>true</is-programmer>
-        <display-name>RS232 0</display-name>
+        <display-name>Garage door opener</display-name>
         <auto-connect>false</auto-connect>
         <port-name>
           <type>Fixed</type>
@@ -52,8 +52,8 @@
   </serial-sources>
   <windows>
     <window>
-      <position left="1912" top="-8" width="1936" height="1216" state="Maximized" />
-      <DockPanel FormatVersion="1.0" DockLeftPortion="0.15" DockRightPortion="0.25" DockTopPortion="0.25" DockBottomPortion="0.25" ActiveDocumentPane="2" ActivePane="2">
+      <position left="399" top="299" width="795" height="561" state="Normal" />
+      <DockPanel FormatVersion="1.0" DockLeftPortion="0.15" DockRightPortion="0.25" DockTopPortion="0.25" DockBottomPortion="0.25" ActiveDocumentPane="1" ActivePane="1">
         <Contents Count="5">
           <Content ID="0" PersistString="VisualizerToolbox" AutoHidePortion="0.25" IsHidden="False" IsFloat="False" />
           <Content ID="1" PersistString="ButtonPanel" AutoHidePortion="0.25" IsHidden="False" IsFloat="False">
@@ -63,19 +63,19 @@
             <controls>
               <control type="button">
                 <name>PswdInit</name>
-                <label>PswdInit</label>
+                <label>Initialize</label>
                 <command><![CDATA[init-pwd\r]]></command>
               </control>
               <control type="button">
                 <name>PswdList</name>
-                <label>PswdList</label>
+                <label>List Pass</label>
                 <command><![CDATA[list-pwd\r]]></command>
               </control>
               <control type="number">
                 <name>NewPasswordSlot</name>
-                <label>NewPasswordSlot</label>
+                <label>New Password Slot</label>
                 <command><![CDATA[]]></command>
-                <value>5</value>
+                <value>3</value>
                 <min-value>1</min-value>
                 <max-value>10</max-value>
                 <increment-value>1</increment-value>
@@ -83,9 +83,9 @@
               </control>
               <control type="text">
                 <name>NewPassword</name>
-                <label>NewPassword</label>
+                <label>New Password</label>
                 <command><![CDATA[set-pwd {NewPasswordSlot} {NewPassword}\r]]></command>
-                <value><![CDATA[1234567]]></value>
+                <value><![CDATA[Arduino]]></value>
               </control>
             </controls>
           </Content>
@@ -96,8 +96,8 @@
           </Content>
           <Content ID="3" PersistString="SerialMonitor" AutoHidePortion="0.25" IsHidden="False" IsFloat="False">
             <WordWrap>true</WordWrap>
-            <IncludeDate>false</IncludeDate>
-            <IncludeTime>false</IncludeTime>
+            <IncludeDate>true</IncludeDate>
+            <IncludeTime>true</IncludeTime>
             <InsertTimestamp>false</InsertTimestamp>
             <SourceId>0</SourceId>
             <TabTitle>Monitor</TabTitle>
@@ -110,54 +110,44 @@
             <hide-details>true</hide-details>
           </Content>
         </Contents>
-        <Panes Count="5">
+        <Panes Count="3">
           <Pane ID="0" DockState="DockRightAutoHide" ActiveContent="0">
             <Contents Count="1">
               <Content ID="0" RefID="0" />
             </Contents>
           </Pane>
-          <Pane ID="1" DockState="Document" ActiveContent="3">
+          <Pane ID="1" DockState="Document" ActiveContent="1">
+            <Contents Count="3">
+              <Content ID="0" RefID="1" />
+              <Content ID="1" RefID="2" />
+              <Content ID="2" RefID="4" />
+            </Contents>
+          </Pane>
+          <Pane ID="2" DockState="Document" ActiveContent="3">
             <Contents Count="1">
               <Content ID="0" RefID="3" />
-            </Contents>
-          </Pane>
-          <Pane ID="2" DockState="Document" ActiveContent="1">
-            <Contents Count="1">
-              <Content ID="0" RefID="1" />
-            </Contents>
-          </Pane>
-          <Pane ID="3" DockState="Document" ActiveContent="2">
-            <Contents Count="1">
-              <Content ID="0" RefID="2" />
-            </Contents>
-          </Pane>
-          <Pane ID="4" DockState="Document" ActiveContent="4">
-            <Contents Count="1">
-              <Content ID="0" RefID="4" />
             </Contents>
           </Pane>
         </Panes>
         <DockWindows>
           <DockWindow ID="0" DockState="Document" ZOrderIndex="0">
-            <NestedPanes Count="4">
+            <NestedPanes Count="2">
               <Pane ID="0" RefID="1" PrevPane="-1" Alignment="Right" Proportion="0.5" />
-              <Pane ID="1" RefID="2" PrevPane="1" Alignment="Left" Proportion="0.5" />
-              <Pane ID="2" RefID="3" PrevPane="2" Alignment="Bottom" Proportion="0.5" />
-              <Pane ID="3" RefID="4" PrevPane="1" Alignment="Bottom" Proportion="0.5" />
+              <Pane ID="1" RefID="2" PrevPane="1" Alignment="Right" Proportion="0.568965517241379" />
             </NestedPanes>
           </DockWindow>
-          <DockWindow ID="1" DockState="DockLeft" ZOrderIndex="2">
+          <DockWindow ID="1" DockState="DockLeft" ZOrderIndex="1">
             <NestedPanes Count="0" />
           </DockWindow>
-          <DockWindow ID="2" DockState="DockRight" ZOrderIndex="3">
+          <DockWindow ID="2" DockState="DockRight" ZOrderIndex="2">
             <NestedPanes Count="1">
               <Pane ID="0" RefID="0" PrevPane="-1" Alignment="Bottom" Proportion="0.5" />
             </NestedPanes>
           </DockWindow>
-          <DockWindow ID="3" DockState="DockTop" ZOrderIndex="4">
+          <DockWindow ID="3" DockState="DockTop" ZOrderIndex="3">
             <NestedPanes Count="0" />
           </DockWindow>
-          <DockWindow ID="4" DockState="DockBottom" ZOrderIndex="5">
+          <DockWindow ID="4" DockState="DockBottom" ZOrderIndex="4">
             <NestedPanes Count="0" />
           </DockWindow>
         </DockWindows>

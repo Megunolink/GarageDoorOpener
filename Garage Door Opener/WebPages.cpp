@@ -1,5 +1,10 @@
 #include "WebPages.h"
 
+// Implementation for webserver class is in header. Need WEBDUINO_NO_IMPLEMENTATION defined
+// so we don't get multiple instances of it. 
+#define WEBDUINO_NO_IMPLEMENTATION 
+#include "Libraries\Webduino\WebServer.h"
+
 void SendHeader(WebServer &rServer)
 {
   rServer.print(F("<html><head><title>Gateway</title>"));

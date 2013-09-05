@@ -1,7 +1,7 @@
 #include "Webserver.h"
 #include "HardwareConfiguration.h"
 #include <Ethernet\Ethernet.h>
-#include <Webduino\WebServer.h>
+#include "Libraries\Webduino\WebServer.h"
 #include "WebPages.h"
 #include "PasswordManager.h"
 #include "AccessControl.h"

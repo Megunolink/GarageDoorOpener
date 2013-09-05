@@ -11,3 +11,8 @@
 *.lai
 *.la
 *.a
+
+# Intellisense file
+*.sdf
+*.suo
+*.opensdf

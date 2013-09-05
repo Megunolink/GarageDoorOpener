@@ -43,7 +43,7 @@ void setup()
   InitializeGarageDoorWebserver();
   SetupAccessControl();  
   
-  Serial.println(F("Ready."));
+  Serial.println(F("Garage door opener ready."));
 }
 
 void loop()
