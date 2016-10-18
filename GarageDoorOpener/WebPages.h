@@ -12,3 +12,5 @@ void SendAccessGrantedPage(WebServer &rServer);
 void SendAccessDeniedPage(WebServer &rServer);
 void SendErrorPage(WebServer &rServer);
 void SendPageNotFound(WebServer &rServer);
+void SendStyles(WebServer &rServer);
+void SendDoorState(WebServer &rServer, const char *Description);
